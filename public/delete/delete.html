@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cadastro de pessoas com busca por CPF. Atividade de programação para internet.">
+  <title>Excluir cadastro | Cadastro CPF</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/comum.js" defer></script>
+  <script src="/delete/delete.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav aria-label="Menu principal">
+      <a href="/index.html">Início</a>
+      <a href="/post/post.html">Cadastrar</a>
+      <a href="/get/get.html">Consultar</a>
+      <a href="/put/put.html">Editar</a>
+      <a href="/delete/delete.html" aria-current="page">Excluir</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Excluir cadastro</h1>
+    <p>Localize uma pessoa e confirme a exclusão do cadastro.</p>
+    <form id="form-busca">
+      <label for="cpf-busca">Buscar pelo CPF
+        <input id="cpf-busca" name="cpf" type="text" inputmode="numeric" minlength="11" maxlength="14" placeholder="000.000.000-00" required>
+      </label>
+      <button id="buscar" type="submit">Buscar cadastro</button>
+      
+    </form>
+    <p id="mensagem" class="mensagem" role="status" aria-live="polite"></p>
+    <section id="resultado" aria-labelledby="titulo-excluir" hidden>
+      <h2 id="titulo-excluir">Confira o cadastro</h2>
+      <dl>
+        <dt>Nome</dt><dd id="nome-pessoa"></dd>
+        <dt>CPF</dt><dd id="cpf-pessoa"></dd>
+        <dt>E-mail</dt><dd id="email-pessoa"></dd>
+      </dl>
+      <p>Ao confirmar, o cadastro será removido. Esta ação não pode ser desfeita.</p>
+      <div>
+        <button id="excluir" type="button">Excluir cadastro</button>
+        <a href="/get/get.html">Voltar para consulta</a>
+      </div>
+    </section>
+  </main>
+  <footer>Atividade de Programação para Internet</footer>
+</body>
+</html>

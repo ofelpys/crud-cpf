@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cadastro de pessoas com busca por CPF. Atividade de programação para internet.">
+  <title>Consultar cadastros | Cadastro CPF</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/comum.js" defer></script>
+  <script src="/get/get.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav aria-label="Menu principal">
+      <a href="/index.html">Início</a>
+      <a href="/post/post.html">Cadastrar</a>
+      <a href="/get/get.html" aria-current="page">Consultar</a>
+      <a href="/put/put.html">Editar</a>
+      <a href="/delete/delete.html">Excluir</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Consultar cadastros</h1>
+    <p>Veja os registros e encontre uma pessoa pelo CPF.</p>
+    <form id="form-busca">
+      <label for="cpf-busca">Buscar pelo CPF
+        <input id="cpf-busca" name="cpf" type="text" inputmode="numeric" minlength="11" maxlength="14" placeholder="000.000.000-00" required>
+      </label>
+      <button id="buscar" type="submit">Buscar cadastro</button>
+      <button id="listar" type="button" class="secundario">Listar todos</button>
+    </form>
+    <p id="mensagem" class="mensagem" role="status" aria-live="polite"></p>
+    <section aria-labelledby="titulo-lista">
+      <h2 id="titulo-lista">Pessoas cadastradas</h2>
+      <p class="ajuda">Deslize a tabela para o lado para ver todos os campos.</p>
+      <div class="tabela-container" tabindex="0" role="region" aria-label="Tabela de cadastros com rolagem horizontal">
+        <table>
+          <caption id="quantidade">Carregando cadastros...</caption>
+          <thead><tr><th scope="col">Nome</th><th scope="col">Sobrenome</th><th scope="col">CPF</th><th scope="col">E-mail</th><th scope="col">Idade</th><th scope="col">Telefone</th><th scope="col">Rua</th><th scope="col">Bairro</th><th scope="col">Cidade</th><th scope="col">Estado</th><th scope="col">RG</th><th scope="col">Ações</th></tr></thead>
+          <tbody id="tabela-corpo"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer>Atividade de Programação para Internet</footer>
+</body>
+</html>
